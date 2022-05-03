@@ -16,7 +16,7 @@ docker-compose up -d --build
    docker exec -it userslist python pg_insertdata.py
    ```
 #### Initialized table contains:  
-| ID          | NAME  | EMAIL           | PASSWORD     |REG_DATE
+| ID          | NAME  | EMAIL           | PASSWORD     |REGISTERED_DATE
 |-------------|:-----:|:---------------:|:------------:|:----------:|
 | uuid4-user1 | user1 | user1@gmail.com | `hash(user1)`|`date.now`
 | uuid4-user2 | user2 | user2@gmail.com | `hash(user2)`|`date.now`
