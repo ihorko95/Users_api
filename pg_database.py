@@ -1,7 +1,7 @@
 import databases, sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = 'postgresql://manager:manager@localhost:5432/dbusers'
+DATABASE_URL = 'postgresql://manager:manager@db:5432/dbusers'
 database = databases.Database(DATABASE_URL)
 metadata = sqlalchemy.MetaData()
 
