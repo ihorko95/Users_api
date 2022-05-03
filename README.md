@@ -6,9 +6,9 @@
 ## How to start?
 1. [download zip code](https://github.com/ihorko95/Users_api/archive/refs/heads/main.zip)  or clone the reposetory<br><br>
 2. Launch docker-compose:
-```bash
-docker-compose up -d --build
-```
+   ```bash
+   docker-compose up -d --build
+   ```
 
 3. Profit. Project is going to be available on http://0.0.0.0:8008 <br><br>
 4. (*Manualy*) Add initial data to database:
