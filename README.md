@@ -26,3 +26,9 @@
 | uuid4-user2 | user2 | user2@gmail.com | `hash(user2)`|`date.now`
 | uuid4-user3 | user3 | user3@gmail.com | `hash(user3)`|`date.now`
 ###### Column `ID` of initialized data, was not generated. It is for friendly using. Use `uuid4-user1` for  CRUD.
+
+## Restart project:
+```bash
+docker-compose down
+docker-compose up -d
+```
