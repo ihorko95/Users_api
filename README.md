@@ -4,7 +4,11 @@
 * Pipenv environment;
 * Dockerfile and docker-compose integrations;
 ## How to start?
-1. [download zip code](https://github.com/ihorko95/Users_api/archive/refs/heads/main.zip)  or clone the reposetory<br><br>
+1. [download zip code](https://github.com/ihorko95/Users_api/archive/refs/heads/main.zip)  or <br>clone the reposetory
+   ```bash
+   git clone https://github.com/ihorko95/Users_api.git
+   ```   
+
 2. Launch docker-compose:
    ```bash
    docker-compose up -d --build
