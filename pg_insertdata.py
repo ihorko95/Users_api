@@ -1,7 +1,7 @@
 import psycopg2
 import datetime
-from passlib.hash import pbkdf2_sha256
 from pg_database import DATABASE_URL
+from users.main import password_hash
 
 try:
     connection = psycopg2.connect(DATABASE_URL)
@@ -11,7 +11,7 @@ try:
     ctime = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
     for i in range(1, 4):
-        values = (f'uuid4-user{i}', f'user{i}', f'user{i}@gmail.com', pbkdf2_sha256.hash(f'user{i}'), ctime)
+        values = (f'uuid4-user{i}', f'user{i}', f'user{i}@gmail.com', password_hash(f'user{i}'), ctime)
         cursor.execute(postgres_insert_query, values)
 
     connection.commit()

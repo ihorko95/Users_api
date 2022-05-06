@@ -9,7 +9,7 @@
    git clone https://github.com/ihorko95/Users_api.git
    ```   
 
-2. Launch docker-compose:
+2. Launch docker-compose :
    ```bash
    docker-compose up -d --build
    ```
