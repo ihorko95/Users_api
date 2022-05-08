@@ -144,3 +144,28 @@ async def delete_user(userid: str =
         "status": True,
         "message": "User deleted successfully."
     }
+
+
+
+async def create_user1(user: User):
+    query = users.select()  # better select one field
+    result = await database.fetch_all(query)
+    for rec in result:
+        if user.email == tuple(rec.values())[2]:
+            raise HTTPException(status_code=409,
+                                detail=[{"loc": ["string", 0], "msg": "Email is already exist.", "type": "ValueError"}])
+    gen_ID = str(uuid.uuid4())
+    ctime = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+    query = users.insert().values(
+        id=gen_ID,
+        name=user.name,
+        email=user.email,
+        password=password_hash(user.password),
+        register_date=ctime
+    )
+    await database.execute(query)
+    return {
+        'id': gen_ID,
+        **user.dict(),
+        'register_date': ctime
+    }

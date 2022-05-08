@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, EmailStr
 from typing import Optional
 
 pattern = {
-    'id': '^((uuid4-[a-z]{4}\d)|([^\W_]{8}(-[^\W_]{4}){3}-[^\W_]{12}))$',
+    'id': r'^((uuid4-[a-z]{4}\d)|([^\W_]{8}(-[^\W_]{4}){3}-[^\W_]{12}))$',
 }
 
 

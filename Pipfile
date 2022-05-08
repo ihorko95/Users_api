@@ -18,6 +18,7 @@ alembic = "*"
 requests = "*"
 starlette = "*"
 pytest = "*"
+httpx = "*"
 
 [dev-packages]
 

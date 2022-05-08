@@ -1,7 +1,14 @@
+from os import environ
 import databases, sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = 'postgresql://manager:manager@db:5432/dbusers'
+# DATABASE_URL = 'postgresql://manager:manager@localhost:5432/dbusers'
+
+TESTING = environ.get("TESTING")
+if TESTING:
+    DATABASE_URL = 'postgresql://postgres:postgres@db:5432/dbusers_tester2'
+else:
+    DATABASE_URL = 'postgresql://postgres:postgres@db:5432/dbusers'
 database = databases.Database(DATABASE_URL)
 metadata = sqlalchemy.MetaData()
 
